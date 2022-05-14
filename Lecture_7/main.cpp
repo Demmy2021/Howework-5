@@ -240,19 +240,7 @@ int main() {
                     window.draw(won);
                     window.display();
                         }
-
-                if (hearts.size() == 0) {
-
-                    while (true) {
-                        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)){
-                            window.close();
                         }
-                        window.clear(sf::Color::White);
-                        window.draw(game_over);
-                        window.display();
-                    }
-                }
-                }
                 for (size_t i = 0; i < hearts.size(); --i){
                 if(wallBounds.intersects(newPos)){
                     velocity.y = 0.f;
@@ -293,6 +281,17 @@ int main() {
                 }
                 rectangle.moveInDirection(elapsed,pressed,hearts);
             }
+                if (hearts.size() == 0) {
+
+                    while (true) {
+                        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)){
+                            window.close();
+                        }
+                        window.clear(sf::Color::White);
+                        window.draw(game_over);
+                        window.display();
+                    }
+                }
             }
         }
         window.clear(sf::Color::Black);
